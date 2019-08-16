@@ -1,0 +1,1 @@
+export default (num: number) => num >= 0 ? num : 0;

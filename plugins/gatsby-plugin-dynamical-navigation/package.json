@@ -1,0 +1,20 @@
+{
+  "name": "gatsby-plugin-dynamical-navigation",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "Sergey Zenin",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^12.7.1",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "directory-tree": "^2.2.3",
+    "gatsby-link": "^2.2.5",
+    "gray-matter": "^4.0.2"
+  }
+}

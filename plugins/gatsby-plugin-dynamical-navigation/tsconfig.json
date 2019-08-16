@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "es5",                        
+    "module": "commonjs",                   
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],                          
+    "allowJs": false,                       
+    "jsx": "preserve",                     
+    "sourceMap": true,                     
+    "strict": true,  
+    "alwaysStrict": false,
+    "noImplicitUseStrict": true,                      
+    "noImplicitAny": true,                 
+    "strictNullChecks": true,              
+    "strictFunctionTypes": true,           
+    "noUnusedLocals": true,                
+    "noUnusedParameters": true,            
+    "esModuleInterop": true,
+    "declaration": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ]                
+  },
+  "include": [
+    "components",
+    "gatsby-node.ts",
+    "utils",
+    "index.ts"
+  ]
+}
