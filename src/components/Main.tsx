@@ -4,7 +4,7 @@ import { colorGreyishBrown, media } from '../utils/css-utils';
 
 export default styled.main`
   color: ${colorGreyishBrown};
-  padding: 2rem;
+  padding: 0 2rem;
   box-sizing: border-box;
   overflow: auto;
   width: 100%;

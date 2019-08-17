@@ -1,5 +1,69 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import { colorWarmPurple, colorVerise, colorWarmGrey, media } from "../../utils/css-utils";
+
+export const NavigationStyle = createGlobalStyle`
+  .navigation-link {
+    text-decoration: none;
+    display: flex;
+
+    &_deep {
+      color: ${colorWarmGrey};
+      font-weight: normal;
+
+      &:before {
+        content: "\\00A7";
+        margin-right: 1rem;
+      }
+    }
+
+    &_head {
+      box-sizing: border-box;
+      font-style: italic;
+      font-weight: bold;
+      color: ${colorWarmPurple};
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      margin-bottom: 3rem;
+
+      &:before, &:after {
+        content: '';
+        width: 100%;
+        background-color: currentColor;
+        height: 2px;
+      }
+
+      &:before {
+        margin-right: 1rem;
+      }
+
+      &:after {
+        margin-left: 1rem;
+      }
+    }
+
+    &_node {
+      padding: 0 0 1rem 1rem;
+      color: ${colorWarmPurple};
+      font-weight: bold;
+    }
+  
+    &_target {
+      color: ${colorVerise};
+      display: block;
+      padding-bottom: 1rem;
+    }
+
+    &.active {
+      color: ${colorVerise};
+    }
+  }  
+
+  .navigation-list {
+    list-style: none;
+    padding: 0 0 1rem 1rem;
+  }
+`
 
 const StyledAside = styled.aside<{ width?: string }>`
   width: 20rem;
@@ -44,89 +108,6 @@ const StyledAside = styled.aside<{ width?: string }>`
     }
   }
 
-  & ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  & li {
-    &>ul a {
-      display: flex;
-
-      &:before {
-        content: "\\00A7";
-        margin-right: 1rem;
-      }
-    }
-  }
-
-  & a {
-    text-decoration: none;
-  }
-
-  & .nav-root-link {
-    box-sizing: border-box;
-    font-style: italic;
-    font-weight: bold;
-    color: ${colorWarmPurple};
-    font-size: 1.8rem;
-    display: flex;
-    align-items: center;
-    margin-bottom: 3rem;
-
-    &.active {
-      color: ${colorVerise};
-    }
-
-    &:before, &:after {
-      content: '';
-      width: 100%;
-      background-color: currentColor;
-      height: 2px;
-    }
-
-    &:before {
-      margin-right: 1rem;
-    }
-
-    &:after {
-      margin-left: 1rem;
-    }
-  }
-  & .node {
-    padding: 0 0 1rem 1rem;
-
-    & a {
-      color: ${colorWarmPurple};
-      font-weight: bold;
-    }
-
-    &__target {
-      & a {
-        color: ${colorVerise};
-      }
-      
-      &>a {
-        display: block;
-        padding-bottom: 1rem;
-      }
-
-      & .node {
-        padding-bottom: .5rem;
-        width: 25rem;
-
-        & a {
-          &:not(.active) {
-            color: ${colorWarmGrey};
-            font-weight: normal;
-          }
-        }
-        ${media.desktop`
-          min-width: auto;
-        `}
-      }
-    }
-  }
   ${media.desktop`
     width: 20%;
     min-width: 30rem;

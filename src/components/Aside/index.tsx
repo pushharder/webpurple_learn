@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Navigation } from '../../../plugins/gatsby-plugin-dynamical-navigation';
-import StyledAside from './styles';
+import StyledAside, { NavigationStyle } from './styles';
 
 type Props = {
   navRootPath?: string;
@@ -12,6 +12,7 @@ const Aside: React.FC<Props> = (props) => {
 
   return (  
     <StyledAside { ...{ width } }>
+      <NavigationStyle></NavigationStyle>
       <Navigation root={props.navRootPath} location={props.targetPath || '/'} />
     </StyledAside>
   );
