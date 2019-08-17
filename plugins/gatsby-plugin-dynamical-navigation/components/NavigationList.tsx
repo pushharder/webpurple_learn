@@ -17,7 +17,7 @@ const NavigationList: React.FC<NavigationListProps> = ({
   children
 }) => {
   return (
-    <ul className={`${navigationListClassName}${isDeep ? ` ${navigationListClassName}_deep` : ''}`}>
+    <ul className={navigationListClassName}>
       {Array.from(childrenSiteNavigation)
       .sort((
         { order: order1 = Number.MAX_SAFE_INTEGER }, 
